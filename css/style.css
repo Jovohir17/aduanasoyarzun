@@ -355,7 +355,7 @@ p {
     padding:10px;
     margin-bottom: 30px;
 }
-.section .title h1 {
+.section .title h2 {
     font-weight: normal;
     margin-bottom: 20px;
     padding: 0;
@@ -377,7 +377,7 @@ p {
 .primary-section, .primary-section .title p, .primary-section h3 {
     color: #f89406;
 }
-.primary-section h1 {
+.primary-section h2 {
     color:#FFF;
 }
 .secondary-section {
@@ -386,7 +386,7 @@ p {
 .secondary-section .title {
     border-bottom: 1px solid #181A1C;
 }
-.secondary-section h1, .secondary-section .title p {
+.secondary-section h2, .secondary-section .title p {
     color: #181A1C;
 }
 /* Third section use bacground image */
