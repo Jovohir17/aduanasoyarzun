@@ -375,3 +375,37 @@ $("#send-mail").click(function () {
 
 //Initialize google map for contact setion with your location.
 
+const express = require('express');
+const redis = require('redis');
+const app = express();
+const client = redis.createClient();
+
+client.on('error', (err) => {
+    console.error('Redis error:', err);
+});
+
+app.get('/data', (req, res) => {
+    const key = 'some_key';
+    client.get(key, (err, data) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        if (data) {
+            return res.json(JSON.parse(data));
+        } else {
+            // Выполнение дорогостоящей операции
+            const result = expensiveOperation();
+            client.setex(key, 3600, JSON.stringify(result));
+            return res.json(result);
+        }
+    });
+});
+
+function expensiveOperation() {
+    // Выполнение какой-либо дорогостоящей операции
+    return { data: "Expensive Data" };
+}
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
