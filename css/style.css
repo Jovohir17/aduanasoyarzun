@@ -1997,6 +1997,7 @@ p {
     url('../fonts/pluton.svg?49924914#porta') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
@@ -2005,9 +2006,11 @@ p {
   @font-face {
     font-family: 'porta';
     src: url('../font/porta.svg?49924914#porta') format('svg');
+    font-display: swap;
   }
 }
 */
+
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "porta";
